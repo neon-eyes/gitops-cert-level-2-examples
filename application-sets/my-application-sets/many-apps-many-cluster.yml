@@ -9,10 +9,10 @@ spec:
         generators:
           # git generator, 'child' #1
           - git:
-              repoURL: https://github.com/neon-eyes/gitops-cert-level-2-examples.git
+              repoURL: https://github.com/neon-eyes/gitops-cert-level-2-examples
               revision: HEAD
               directories:
-                - path: application-set/example-apps/*
+                - path: ./application-set/example-apps/*
           # cluster generator, 'child' #2
           - clusters: {}
   template:
@@ -21,7 +21,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/neon-eyes/gitops-cert-level-2-examples.git
+        repoURL: https://github.com/neon-eyes/gitops-cert-level-2-examples
         targetRevision: HEAD
         path: '{{path}}'
       destination:
