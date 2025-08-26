@@ -22,3 +22,13 @@ spec:
     syncOptions:
       - CreateNamespace=true  
    
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jqPathExpressions:
+        - .metadata.annotations.creation 
+        # | select(.name == "injected-init-container")
+    - group: apps
+      kind: Secret
+      jqPathExpressions:
+        - .data.my-password
