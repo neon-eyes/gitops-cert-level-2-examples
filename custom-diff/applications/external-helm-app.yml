@@ -25,10 +25,10 @@ spec:
   ignoreDifferences:
     - group: apps
       kind: Deployment
-      jqPathExpressions:
-        - .metadata.annotations.creation 
-        # | select(.name == "injected-init-container")
+      jsonPointer:
+        - /metadata/annotations/creation 
+        
     - group: apps
       kind: Secret
-      jqPathExpressions:
-        - .data.my-password
+      jsonPointer:
+        - /data/my-password
